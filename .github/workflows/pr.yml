@@ -59,7 +59,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download binaries
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: bins
           path: bins
@@ -129,7 +129,7 @@ jobs:
       - uses: taiki-e/install-action@nextest
       - uses: taiki-e/install-action@cargo-llvm-cov
       - name: Download WASMs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: wasm
           path: ${{ env.WASM_TARGET_DIR }}
@@ -138,7 +138,7 @@ jobs:
           mv ${{ env.WASM_TARGET_DIR }}/libs ${{ env.DEFAULTS_DIR }}/libs
           mv ${{ env.DEFAULTS_DIR }}/libs/default_executor.wasm ${{ env.DEFAULTS_DIR }}/executor.wasm
       - name: Download binaries
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: bins
           path: bins
@@ -191,7 +191,7 @@ jobs:
           python-version: 3.11.12
       - uses: abatilo/actions-poetry@v4
       - name: Download WAMSs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: wasm
           path: ${{ env.WASM_TARGET_DIR }}
@@ -200,7 +200,7 @@ jobs:
           mv ${{ env.WASM_TARGET_DIR }}/libs ${{ env.DEFAULTS_DIR }}/libs
           mv ${{ env.DEFAULTS_DIR }}/libs/default_executor.wasm ${{ env.DEFAULTS_DIR }}/executor.wasm
       - name: Download binaries
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: bins
           path: bins
@@ -298,7 +298,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download clippy and lcov artifact reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: lints
           pattern: report-*
@@ -322,7 +322,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download wasm
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: wasm
           path: ${{ env.WASM_TARGET_DIR }}
